@@ -2,10 +2,11 @@
 
 <html>
   <head>
-    <title>SKwow games</title>
+    <title>WOW Games</title>
       <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
 
       <meta charset="utf-8">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -14,28 +15,37 @@
       <script src="TemplateData/UnityProgress.js"></script>
   </head>
   <body>
-    <nav >
-
+    <nav class="animated" >
+            <img src="Images/wow.png" id="navwow" class="img-responsive center-block animated" style="height: 40px; width: 60px;">
     </nav>
     <script>
         $(document).ready(function(){
             jQuery('nav').css({opacity:0.01})
             $(window).scroll(function(){
                 var temp= $(window).scrollTop();
-                temp=temp/400;
+                jQuery('#ww').css({opacity: 50/temp})
                 console.log("temp: "+temp);
-                jQuery('nav').css({opacity:temp})
+                jQuery('nav').css({opacity:temp/400})
+                if(temp>=200)
+                {
+                    $('#games').removeClass('bounceInRight').addClass('bounceOutLeft');
+                }else{
+                    $('#games').removeClass('bounceOutLeft').addClass('bounceInRight');
+                }
+                if(temp>=400)
+                {
+                    $('nav').removeClass('bounceOutUp').addClass('bounceInDown');
+                }else{
+                    $('nav').removeClass('bounceInDown').addClass('bounceOutUp');
+                }
             });
         });
     </script>
 
 
     <div class="sec1" >
-       <!-- <div class="col-md-12" style="padding-left: 0px;  padding-right: 0px;">
-            <img src="Images/color_circle.jpg" height="600" width=100%>
-        </div>
-        -->
-
+      <img src="Images/ww.png" class="animated bounceInDown" id="ww" style="position: absolute; width: inherit; height: inherit; padding-bottom: 50px;">
+      <img src="Images/games.png" class="animated bounceInRight" id="games" style="position: absolute; width: inherit; height: inherit; padding-bottom: 50px;">
     </div>
 
 
@@ -63,7 +73,8 @@
     </script>
     -->
     <div class="subclass">
-       <!--<iframe src="gameDodgeIt.html" width=1000 height=700 name="IFRAME"></iframe>-->
+       <iframe src="gameDodgeIt.html" width=1150 height=700 name="IFRAME" style="padding-left: 150px;"></iframe>
+        <h1 style="align-content: center; padding-left: 500px;"> Under Construction.</h1>
     </div>
 
   </body>
